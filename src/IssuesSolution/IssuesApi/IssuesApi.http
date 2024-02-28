@@ -1,0 +1,57 @@
+@IssuesApi_HostAddress = http://localhost:1337
+
+GET {{IssuesApi_HostAddress}}/demo
+Accept: application/json
+
+###
+# "/employees" is a "collection" resource.
+GET {{IssuesApi_HostAddress}}/employees
+
+
+###
+
+# "/employees/bob-smith" is a document resource
+GET {{IssuesApi_HostAddress}}/employees/3
+
+
+
+### 
+
+# Post to a collection 
+# Means "Consider making a new subordinate resource" - Create something new.
+POST {{IssuesApi_HostAddress}}/employees
+Content-Type: application/json
+
+{
+  "name": "Jake Jones",
+  "department": "DEV"
+}
+
+
+### 
+# Post to a document is rare (an example later)
+# "Submit this entity for processing"
+POST {{IssuesApi_HostAddress}}/employees/3
+Content-Type: application/json
+
+{
+  "name": "Jake Jones",
+  "department": "DEV"
+}
+
+
+###
+
+GET {{IssuesApi_HostAddress}}/software
+Accept: application/json
+
+
+### 
+
+POST {{IssuesApi_HostAddress}}/software
+Content-Type: application/json
+
+{
+  "title": "Destiny",
+  "version": "2"
+}

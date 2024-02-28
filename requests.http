@@ -1,0 +1,7 @@
+
+GET http://localhost:1337/demo
+
+
+###
+
+GET http://localhost:1337/issues
